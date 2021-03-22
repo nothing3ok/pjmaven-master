@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <emp id="1">
+        <name>张三</name>
+        <gender>男</gender>
+        <age>18</age>
+        <with>200</with>
+    </emp>
+    <emp id="2">
+        <name>王五</name>
+        <gender>女</gender>
+        <age>20</age>
+        <with>400</with>
+    </emp>
+    <emp id="3">
+        <name>赵六</name>
+        <gender>男</gender>
+        <age>22</age>
+        <with>600</with>
+    </emp>
+    <emp id="4">
+        <name>哈尼</name>
+        <gender>女</gender>
+        <age>24</age>
+        <with>800</with>
+    </emp>
+    <emp id="5">
+        <name>偷偷</name>
+        <gender>男</gender>
+        <age>26</age>
+        <with>1000</with>
+    </emp>
+</list>

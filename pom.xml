@@ -21,6 +21,9 @@
         <module>pjmaven10</module>
         <module>pjmaven10</module>
         <module>pjmaven10</module>
+        <module>pjmaven11</module>
+        <module>jsdpj_XML</module>
+        <module>pjmaven11</module>
     </modules>
 
 

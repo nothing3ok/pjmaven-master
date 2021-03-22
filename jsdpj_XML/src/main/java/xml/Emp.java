@@ -1,5 +1,9 @@
 package xml;
 
+/**
+ * 员工类
+ * 该类每个实力用于员工信息
+ */
 public class Emp {
     private int id;
     private String name;

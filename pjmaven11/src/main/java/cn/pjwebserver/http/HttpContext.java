@@ -1,6 +1,14 @@
 package cn.pjwebserver.http;
 
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,6 +42,21 @@ public class HttpContext {
          * <extension></extension>中间的问分作为valuev保存到mime_mapping 这个map中完成初始化
          *
          */
+        try {
+            SAXReader reader=new SAXReader();
+            //读取到xml
+            Document doc=reader.
+                    read(new File("./pjmaven11/conf/web.xml"));
+            //得到标签头
+            Element element=doc.getRootElement();
+            List<Element> f= element.elements("mime-mapping");
+            for (Element element1 : f) {
+                String sts=element1.elementText("extension");
+                System.out.println(sts);
+            }
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
 
     }
     public static String getMimeType(String ext){

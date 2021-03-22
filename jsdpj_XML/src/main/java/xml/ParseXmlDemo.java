@@ -55,6 +55,7 @@ public class ParseXmlDemo {
              * list elements（string name）
              * 获取当前标签中所有同名字标签（指定名字）
              */
+
             Element element= doc.getRootElement();
             /**
              * 里面可以添加标签的名字

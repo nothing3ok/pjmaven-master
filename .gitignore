@@ -1,0 +1,4 @@
+# Project exclude paths
+/pjmaven2/target/
+/pjmaven3/target/
+/target/

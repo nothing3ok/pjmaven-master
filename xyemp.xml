@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list>
+  <emp id="1">
+    <name>张三</name>
+    <age>18</age>
+    <gender>张三</gender>
+    <with>300</with>
+  </emp>
+  <emp id="2">
+    <name>发</name>
+    <age>18</age>
+    <gender>发</gender>
+    <with>300</with>
+  </emp>
+  <emp id="3">
+    <name>三</name>
+    <age>18</age>
+    <gender>三</gender>
+    <with>300</with>
+  </emp>
+  <emp id="4">
+    <name>三的</name>
+    <age>18</age>
+    <gender>三的</gender>
+    <with>300</with>
+  </emp>
+</list>

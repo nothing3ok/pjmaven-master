@@ -23,4 +23,11 @@
 
   所以我们要对请求中请求行里的url部分做进一步的解析工作
   在httprequest 中在定义三个属性：
+  string requestURI 保存url 中‘？’左侧的请求部分
+  string queryString 保存url 中‘？’右侧的参数部分
+  Map parameters ：用来保存每一组参数
+
+  在定义一个方法parseURL，用来进一步解析url，并在解析请求行
+  parseRequestLine方法中得到url后调用
+
 

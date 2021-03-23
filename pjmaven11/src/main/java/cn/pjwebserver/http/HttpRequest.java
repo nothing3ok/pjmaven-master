@@ -23,7 +23,12 @@ public class HttpRequest {
     private String url;
     //请求使用的http协议版本
     private String protocol;
-
+    //url中的请求部分，“？”左侧内容
+    private String requestURI;
+    //url中的请求部分，“？”右侧内容
+    private String queryString;
+    //每一组参数key：参数名，value：参数值
+    private Map<String,String>parameters =new HashMap<>();
     /**
     消息头相关信息定义
      */
@@ -67,7 +72,6 @@ public class HttpRequest {
         System.out.println("httprequest:解析请求行");
         try {
             //读取发过来的内容
-
             String line=readLine();
             String[]data=line.split("\\s");
             /**
@@ -76,6 +80,7 @@ public class HttpRequest {
              */
             method=data[0];
             url=data[1];
+            parseURL();//进一步解析url
             protocol=data[2];
             System.out.println("method:"+method);
             System.out.println("url:"+url);//这里可能会下标越界
@@ -84,6 +89,69 @@ public class HttpRequest {
             e.printStackTrace();
         }
         System.out.println("解析完毕");
+    }
+
+    /**
+     * 进一步解析请求行中的url部分
+     * 因为一个url可能有两种情况：包含参数或不含有参数
+     * 如果含有参数要对参数进行解析
+     */
+    private void parseURL(){
+
+        System.out.println("HttpRequest:进一步解析url");
+        /**
+         * url有两种情况：
+         * 1：不含有参数，如：/myweb/index.html
+         * 对于这种情况，直接将url的设置到属性requestURI上即可
+         *
+         * 2 含有参数，如：/myweb/reg？username=xx&password=xx...
+         * 对于这种情况，我们首先向url按照“？”拆分为两部分
+         * 第一种部分为参数请求部分，赋值给requestURI
+         * 第二部分为参数部分，赋值给queryString
+         * 然后在对参数部分进一步拆分：
+         * 首先按照，”&“拆分出每一组参数，然后每一组参数在按照”=“
+         * 拆分为两部分，分别是参数名的参数值，在将他们以key，value 存入到
+         * parameters这个Map类型属性完成解析工作
+         */
+        this.url.split("/?");
+        //contains方法比较 或者indexOf方法比较
+        if (url.indexOf("?")==-1){
+            this.requestURI=url;
+        }else {
+            String[] data=url.split("\\?");
+            this.requestURI=data[0];
+            if (data.length>1){
+                this.queryString=data[1];
+                //进步拆分 得到每个属性对应的值
+               String[] dats= queryString.split("&");
+                for (String dat : dats) {
+                    //按照=拆分 得到 每个属性  和 值
+                    String [] arr=dat.split("=");
+                    if (arr.length>1){
+                        if (("username".equals(arr[0])&&arr[1]!=null)||("password".equals(arr[0])&&arr[1]!=null)){
+                            this.parameters.put(arr[0],arr[1]);
+                        }
+                    }
+                    else if(("username".equals(arr[0]))||("password".equals(arr[0]))) {
+                        System.out.println("名字没有输入");
+                        return;
+                    }
+                    else {
+                        this.parameters.put(arr[0],null);
+                    }
+                }
+            }
+
+        }
+
+
+
+
+        System.out.println("RequestURI:"+requestURI);
+        System.out.println("queryString:"+queryString);
+        System.out.println("parameters:"+parameters);
+        System.out.println("HttpRequest:解析url部分完毕");
+
     }
 
     /**

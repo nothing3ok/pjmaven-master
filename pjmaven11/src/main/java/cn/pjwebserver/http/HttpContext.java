@@ -12,20 +12,19 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * è®¾è®¡è¿™ä¸ªç±»çš„ç›®çš„æ˜¯å°†å¤šæœ‰HTTP åè®® å®šä¹‰çš„å†…å®¹éƒ½æ”¾åœ¨è¿™é‡Œ
- * è¿™æ ·æˆ‘ä»¬æ— è®ºå“ªä¸ªç±»éœ€è¦ç”¨åˆ°HTTPåè®®çš„ä¸œè¥¿æ—¶ï¼Œéƒ½å¯ä»¥æ¥è¿™é‡Œæ‰¾åˆ°
+ * Éè¼ÆÕâ¸öÀàµÄÄ¿µÄÊÇ½«¶àÓĞHTTP Ğ­Òé ¶¨ÒåµÄÄÚÈİ¶¼·ÅÔÚÕâÀï
+ * ÕâÑùÎÒÃÇÎŞÂÛÄÄ¸öÀàĞèÒªÓÃµ½HTTPĞ­ÒéµÄ¶«Î÷Ê±£¬¶¼¿ÉÒÔÀ´ÕâÀïÕÒµ½
  *
  */
 public class HttpContext {
     private static final Map<String,String> MIME_MAPPING = new HashMap<>();
     static {
-        //åˆå§‹åŒ–
+        //³õÊ¼»¯
         initMimeMapping();
-
     }
 
     /**
-     * åˆå§‹åŒ–MIME_MAPPING
+     * ³õÊ¼»¯MIME_MAPPING
      */
     private static void initMimeMapping(){
 //        MIME_MAPPING.put("html","text/html");
@@ -35,19 +34,19 @@ public class HttpContext {
 //        MIME_MAPPING.put("jpg","image/jpeg");
 //        MIME_MAPPING.put("gif","image/gif");
         /**
-         * é€šè¿‡æ­‡æ¯conf/web.xmlï¼Œå°†æ‰€æœ‰çš„ç±»å‹åˆå§‹åŒ–å‡ºæ¥
-         * 1 åˆ›å»ºsaxreader è¯»å–conf ç›®å½•ä¸‹çš„webã€‚xmlæ–‡ä»¶
-         * 2 è·Ÿå…ƒç´ ä¸‹æ‰€æœ‰åä¸º<mime-mapping></mime-mapping>çš„å­æ ‡ç­¾è·å–å‡ºæ¥
-         * 3 ä¾¿åˆ©æ‰€æœ‰çš„<mime-mapping></mime-mapping>æ ‡ç­¾ï¼Œå¹¶å°†å­æ ‡ç­¾
-         * <extension></extension>ä¸­é—´çš„é—®åˆ†ä½œä¸ºvaluevä¿å­˜åˆ°mime_mapping è¿™ä¸ªmapä¸­å®Œæˆåˆå§‹åŒ–
+         * Í¨¹ıĞªÏ¢conf/web.xml£¬½«ËùÓĞµÄÀàĞÍ³õÊ¼»¯³öÀ´
+         * 1 ´´½¨saxreader ¶ÁÈ¡conf Ä¿Â¼ÏÂµÄweb¡£xmlÎÄ¼ş
+         * 2 ¸úÔªËØÏÂËùÓĞÃûÎª<mime-mapping></mime-mapping>µÄ×Ó±êÇ©»ñÈ¡³öÀ´
+         * 3 ±ãÀûËùÓĞµÄ<mime-mapping></mime-mapping>±êÇ©£¬²¢½«×Ó±êÇ©
+         * <extension></extension>ÖĞ¼äµÄÎÊ·Ö×÷Îªvaluev±£´æµ½mime_mapping Õâ¸ömapÖĞÍê³É³õÊ¼»¯
          *
          */
         try {
             SAXReader reader=new SAXReader();
-            //è¯»å–åˆ°xml
+            //¶ÁÈ¡µ½xml
             Document doc=reader.
                     read(new File("./pjmaven11/conf/web.xml"));
-            //å¾—åˆ°æ ‡ç­¾å¤´
+            //µÃµ½±êÇ©Í·
             Element element=doc.getRootElement();
             List<Element> f= element.elements("mime-mapping");
             for (Element element1 : f) {

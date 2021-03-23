@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * å¤„ç†å®¢æˆ·ç«¯è¯·æ±‚
+ * ´¦Àí¿Í»§¶ËÇëÇó
  */
 public class ClientHandler  implements Runnable{
 
@@ -20,43 +20,43 @@ public class ClientHandler  implements Runnable{
 
     public void run() {
         try {
-            //1.è§£æè¯·æ±‚
-            //å®ä¾‹åŒ–è¯·æ±‚å¯¹è±¡ï¼Œå®ä¾‹åŒ–è¿‡ç¨‹ä¸­ä¹Ÿæ˜¯è§£æè¯·æ±‚çš„è¿‡ç¨‹
+            //1.½âÎöÇëÇó
+            //ÊµÀı»¯ÇëÇó¶ÔÏó£¬ÊµÀı»¯¹ı³ÌÖĞÒ²ÊÇ½âÎöÇëÇóµÄ¹ı³Ì
             HttpRequest request=new HttpRequest(socket);
-            //å®ä¾‹åŒ–å“åº”å¯¹è±¡
+            //ÊµÀı»¯ÏìÓ¦¶ÔÏó
             HttpResponse response=new HttpResponse(socket);
 
 
-            //2.å¤„ç†è¯·è¯·æ±‚
-            //å…ˆé€šè¿‡requestè·å–ç”¨è¿‡æˆ·è¯·æ±‚çš„èµ„æºçš„æŠ½è±¡è·¯å¾„
+            //2.´¦ÀíÇëÇëÇó
+            //ÏÈÍ¨¹ırequest»ñÈ¡ÓÃ¹ı»§ÇëÇóµÄ×ÊÔ´µÄ³éÏóÂ·¾¶
             String path=request.getUrl();
-            //ä»webappsç›®å½•ä¸‹æ ¹æ®æŠ½è±¡è·¯å¾„å¯»æ‰¾è¯·æ±‚èµ„æº
-            File file=new File("./pjmaven10/webapps"+path);
-            //åˆ¤æ–­ç”¨æˆ·è¯·æ±‚çš„èµ„æºæ˜¯å¦å­˜åœ¨
+            //´ÓwebappsÄ¿Â¼ÏÂ¸ù¾İ³éÏóÂ·¾¶Ñ°ÕÒÇëÇó×ÊÔ´
+            File file=new File("./pjmaven11/webapps"+path);
+            //ÅĞ¶ÏÓÃ»§ÇëÇóµÄ×ÊÔ´ÊÇ·ñ´æÔÚ
             if (file.exists()){
-                System.out.println("è¯¥èµ„æºå·²æ‰¾åˆ°ï¼");
-                //å°†è¦å“åº”çš„èµ„æºè®¾ç½®åˆ°responseä¸­
+                System.out.println("¸Ã×ÊÔ´ÒÑÕÒµ½!");
+                //½«ÒªÏìÓ¦µÄ×ÊÔ´ÉèÖÃµ½responseÖĞ
                 response.setEntity(file);
 
-                //å“åº”å®¢æˆ·ç«¯
-                //æ‰€æœ‰ç›¸åº”å†…å®¹å‘é€å®Œæ¯•
+                //ÏìÓ¦¿Í»§¶Ë
+                //ËùÓĞÏàÓ¦ÄÚÈİ·¢ËÍÍê±Ï
             }else {
-                System.out.println("è¯¥èµ„æºä¸å­˜åœ¨");
-                //å“åº”404é¡µé¢
-                response.setEntity(new File("./pjmaven10/webapps/root/404.html"));
+                System.out.println("¸Ã×ÊÔ´²»´æÔÚ");
+                //ÏìÓ¦404Ò³Ãæ
+                response.setEntity(new File("./pjmaven11/webapps/root/404.html"));
 
                 response.setStatusCode(404);
                 response.setStatusReason("NOT FOUND!");
             }
 
-            //3å‘é€ç›¸åº”
+            //3·¢ËÍÏàÓ¦
             response.flush();
 
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
             try {
-                //æ–­å¼€åé‡Šæ”¾èµ„æº
+                //¶Ï¿ªºóÊÍ·Å×ÊÔ´
                 socket.close();
             } catch (IOException e) {
                 e.printStackTrace();

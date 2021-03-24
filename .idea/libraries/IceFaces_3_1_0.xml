@@ -1,0 +1,33 @@
+<component name="libraryTable">
+  <library name="IceFaces-3.1.0" type="jsf-icefaces">
+    <properties version="3.1.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/icepush.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/commons-beanutils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/commons-digester.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/icefaces.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/commons-collections.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/icefaces-ace.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/icefaces-compat.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/el-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/krysalis-jCharts-1.0.0-alpha-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/portletfaces-bridge-2.0.2-ice-7875.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/javax.servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/portlet2-api.jar!/" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/CDDL-1.0.txt" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/ApacheLICENSE-2.0.txt" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/el-api-2.2.1-b03.jar!/" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/MIT-LICENSE.txt" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/NOTICE.txt" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/poi-3.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/FastInfoset.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

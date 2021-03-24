@@ -128,10 +128,13 @@ public class HttpRequest {
                     //按照=拆分 得到 每个属性  和 值
                     String [] arr=dat.split("=");
                     if (arr.length>1){
+                        //名称或者密码 必须有值才存入
                         if (("username".equals(arr[0])&&arr[1]!=null)||("password".equals(arr[0])&&arr[1]!=null)){
                             this.parameters.put(arr[0],arr[1]);
                         }
                     }
+                    //名称密码  任何一个没有值则不能存入
+
                     else if(("username".equals(arr[0]))||("password".equals(arr[0]))) {
                         System.out.println("名字没有输入");
                         return;

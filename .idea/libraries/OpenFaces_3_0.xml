@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="OpenFaces-3.0" type="jsf-openfaces">
+    <properties version="3.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/sac.jar!/" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/redistribution.txt" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/cssparser.jar!/" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/commons-codec-1.3-license.txt" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/commons-collections_2.jar!/" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/cssparser-0.9.4-license.txt" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/jcommon.jar!/" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/openfaces-license.txt" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/jfreechart-license.txt" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/myfaces-license.txt" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/jfreechart.jar!/" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/json-license.txt" />
+      <root url="jar://$PROJECT_DIR$/pjmaven12/lib/openfaces.jar!/" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/jdom-1.0-license.txt" />
+      <root url="file://$PROJECT_DIR$/pjmaven12/lib/dojo-license.txt" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

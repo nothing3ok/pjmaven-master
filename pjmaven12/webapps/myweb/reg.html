@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<center>
+<h1>用户注册</h1>
+<!--一页面中所有输入框用户输入的内容若想提交给服务端，那么这些输入框必须被包含在form 标签中才可以
+form是用来将其包含所有输入域内容提交到指定的。
+form上有两个重要的属性
+action：用于指定单元提交的路径，指定到那个服务器
+method：用来指定单元提交的 方式（get，post） get 称之地址栏提交 -- post 称之打包提交
+-->
+<form action="./reg" method="get">
+<table border="1">
+        <tr>
+            <!-- 所有在form 表单中的输入框，都必须要指定name 属性，浏览器就是根据该属性的值组为
+            参数名，想该输入狂的值组为参数值传给服务端的，若不指定则会忽略这个输入框-->
+            <td>用户</td>
+            <td><input type="text" name="username"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="text" name="password"></td>
+        <tr>
+            <td>年龄</td>
+            <td><input type="text" name="age"></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td><input type="text" name="sex"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="注册">
+            </td>
+        </tr>
+    </table>
+</form>
+    </center>
+</body>
+</html>

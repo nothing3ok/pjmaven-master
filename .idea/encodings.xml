@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
+    <file url="file://$PROJECT_DIR$/pjmaven10/src/main/java/cn/pjwebserver/http/HttpContext.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/pjmaven11/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pjmaven12/src/main/java/cn/pjwebserver/core/ClientHandler.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/pjmaven12/src/main/java/cn/pjwebserver/core/WebServer.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/pjmaven12/src/main/java/cn/pjwebserver/http/HttpContext.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/pjmaven12/src/main/java/cn/pjwebserver/http/HttpRequest.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/pjmaven12/src/main/java/cn/pjwebserver/http/HttpResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/pjmaven14/src/main/java/cn/pjwebserver/core/ClientHandler.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/pjmaven14/src/main/java/cn/pjwebserver/core/WebServer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/pjmaven14/src/main/java/cn/pjwebserver/http/HttpContext.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/pjmaven14/src/main/java/cn/pjwebserver/http/HttpRequest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/pjmaven14/src/main/java/cn/pjwebserver/http/HttpResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/pjmaven14/src/main/java/cn/serverlet/LoginServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/pjmaven14/src/main/java/cn/serverlet/RegServlet.java" charset="GBK" />
   </component>
 </project>

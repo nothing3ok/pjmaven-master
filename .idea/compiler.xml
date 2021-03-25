@@ -14,10 +14,11 @@
         <module name="pjmaven3" />
         <module name="pjmaven4" />
         <module name="pjmaven2" />
+        <module name="pjmaven9" />
         <module name="pjmaven10" />
         <module name="pjmaven11" />
         <module name="pjmaven12" />
-        <module name="pjmaven9" />
+        <module name="pjmaven13" />
       </profile>
     </annotationProcessing>
   </component>

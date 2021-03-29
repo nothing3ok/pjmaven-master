@@ -61,9 +61,9 @@ public class HttpRequest {
             parseHeaders();
             parseContent();
         } catch (EmptyRequestException e){
+            //将空请求异常抛出给clienthandler
             throw e;
         }
-
         catch (Exception e) {
             e.printStackTrace();
         }
@@ -97,7 +97,7 @@ public class HttpRequest {
             System.out.println("url:"+url);//这里可能会下标越界
             System.out.println("protocol:"+protocol);
         } catch (EmptyRequestException e) {
-
+            //若是空请求则抛出去给构造方法
             throw e;
         } catch (Exception e) {
             e.printStackTrace();

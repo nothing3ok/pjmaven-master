@@ -19,7 +19,7 @@ public class LoginServlet {
         //读取文件中的值
 
 
-        try (RandomAccessFile raf =new RandomAccessFile("RandomAccessFile","r");) {
+        try (RandomAccessFile raf =new RandomAccessFile("user.dat","r");) {
             boolean check =false;
             for (int i = 0; i < raf.length()/100; i++) {
                 raf.seek(i*100);

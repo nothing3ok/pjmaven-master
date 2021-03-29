@@ -19,12 +19,12 @@ public class LoginServlet {
         //读取文件中的值
 
 
-        try (RandomAccessFile raf =new RandomAccessFile("RandomAccessFile","r");) {
+        try (RandomAccessFile raf =new RandomAccessFile("user.dat","r");) {
             boolean check =false;
             for (int i = 0; i < raf.length()/100; i++) {
                 raf.seek(i*100);
                 byte[] data=new byte[32];
-                raf.read();
+                raf.read(data);
                 String name= new String(data,"UTF-8");
                 if (name.equals(username)){
                     raf.read(data);
@@ -34,16 +34,13 @@ public class LoginServlet {
                         check=true;
                         break;
                     }
-
-                    if (check){
-                        response.setEntity(new File("./pjmaven13/webapps/myweb/login_success.html"));
-                    }else {
-                        response.setEntity(new File("./pjmaven13/webapps/myweb/login_fail.html"));
-                    }
                 }
-
             }
-
+            if (check){
+                response.setEntity(new File("./pjmaven14/webapps/myweb/login_success.html"));
+            }else {
+                response.setEntity(new File("./pjmaven14/webapps/myweb/login_fail.html"));
+            }
 
 
         } catch (Exception e) {

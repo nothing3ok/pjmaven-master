@@ -20,6 +20,7 @@
         <module name="pjmaven12" />
         <module name="pjmaven13" />
         <module name="pjmaven14" />
+        <module name="pjmaven15" />
       </profile>
     </annotationProcessing>
   </component>

@@ -65,7 +65,14 @@ public class ClientHandler  implements Runnable{
             //3发送相应
             response.flush();
 
-        }catch (EmptyRequestException e){
+        }
+        /**
+         * 这里单独捕获空请求异常
+         * 如果client handler在一开始实例化请求对象httprequest时，该构造方法抛出了
+         * 空请求异常，那么直接会跳到catch这里，这样就等于忽略了，clienthandler 后续应该，
+         * 有的处理请求和相应客户端的操作了。
+         */
+        catch (EmptyRequestException e){
             System.out.println("空请求.");
         }
         catch (Exception e) {

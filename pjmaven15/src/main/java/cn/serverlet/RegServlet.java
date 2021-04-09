@@ -12,7 +12,7 @@ import java.util.Arrays;
  * 注册业务
  */
 public class RegServlet extends HttpServlet {
-    public void Servlet(HttpRequest request, HttpResponse response) throws IOException {
+    public void service(HttpRequest request, HttpResponse response) throws IOException {
         System.out.println("RegServlet:开始注册用户业务");
 
         /**

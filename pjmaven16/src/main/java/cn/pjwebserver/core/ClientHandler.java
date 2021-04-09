@@ -3,6 +3,7 @@ package cn.pjwebserver.core;
 import cn.pjwebserver.http.EmptyRequestException;
 import cn.pjwebserver.http.HttpRequest;
 import cn.pjwebserver.http.HttpResponse;
+import cn.serverlet.HttpServlet;
 import cn.serverlet.LoginServlet;
 import cn.serverlet.RegServlet;
 
@@ -33,18 +34,21 @@ public class ClientHandler  implements Runnable{
             //2.处理请请求
             //先通过request获取用过户请求的资源的抽象路径
             String path=request.getRequestURI();
+            /**
+             * 首先判断该请求路径是否为一个请求业务
+             * 根据请求路径去servercontext 企图对应的servlet
+             * 若返回值不是null，则说明该请求是请求一个业务
+             * 那么就调用对应servlet 的service方法
+             */
+            HttpServlet servlet= ServerContext.getServlet(path);
             //首先判断该请求路径是否为请求的一个业务
-            if ("/myweb/reg".equals(path)){
+            if (servlet !=null){
                 //请求业务
-                RegServlet servlet=new RegServlet();
-                servlet.Servlet(request,response);
-            }else if ("/myweb/login".equals(path)){
-                LoginServlet service=new LoginServlet();
-                service.Servlet(request,response);
+                servlet.service(request,response);
             }
             else {
                 //从webapps目录下根据抽象路径寻找请求资源
-                File file=new File("./pjmaven15/webapps"+path);
+                File file=new File("./pjmaven16/webapps"+path);
                 //判断用户请求的资源是否存在
                 if (file.exists()){
                     System.out.println("该资源已找到!");
@@ -56,7 +60,7 @@ public class ClientHandler  implements Runnable{
                 }else {
                     System.out.println("该资源不存在");
                     //响应404页面
-                    response.setEntity(new File("./pjmaven15/webapps/root/404.html"));
+                    response.setEntity(new File("./pjmaven16/webapps/root/404.html"));
                     response.setStatusCode(404);
                     response.setStatusReason("NOT FOUND!");
                 }

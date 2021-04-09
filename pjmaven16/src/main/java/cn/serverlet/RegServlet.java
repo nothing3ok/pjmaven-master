@@ -12,7 +12,7 @@ import java.util.Arrays;
  * 注册业务
  */
 public class RegServlet extends HttpServlet {
-    public void Servlet(HttpRequest request, HttpResponse response) throws IOException {
+    public void service(HttpRequest request, HttpResponse response) throws IOException {
         System.out.println("RegServlet:开始注册用户业务");
 
         /**
@@ -49,7 +49,7 @@ public class RegServlet extends HttpServlet {
             //写年龄
             raf.writeInt(age);
             //3 response ,响应注册成功
-            response.setEntity(new File("./pjmaven15/webapps/myweb/reg_success.html"));
+            response.setEntity(new File("./pjmaven16/webapps/myweb/reg_success.html"));
 
         } catch (Exception e) {
             e.printStackTrace();

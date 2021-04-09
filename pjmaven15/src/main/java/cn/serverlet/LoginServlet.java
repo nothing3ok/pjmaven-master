@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public class LoginServlet extends HttpServlet {
-    public  void Servlet(HttpRequest request, HttpResponse response) throws IOException {
+    public  void service(HttpRequest request, HttpResponse response) throws IOException {
         System.out.println("登入");
         //获取对应的值
         String username=request.getParameter("username");

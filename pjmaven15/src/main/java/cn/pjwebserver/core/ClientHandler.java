@@ -37,10 +37,10 @@ public class ClientHandler  implements Runnable{
             if ("/myweb/reg".equals(path)){
                 //请求业务
                 RegServlet servlet=new RegServlet();
-                servlet.Servlet(request,response);
+                servlet.service(request,response);
             }else if ("/myweb/login".equals(path)){
                 LoginServlet service=new LoginServlet();
-                service.Servlet(request,response);
+                service.service(request,response);
             }
             else {
                 //从webapps目录下根据抽象路径寻找请求资源

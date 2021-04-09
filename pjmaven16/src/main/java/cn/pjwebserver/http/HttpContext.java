@@ -44,7 +44,7 @@ public class HttpContext {
             SAXReader reader=new SAXReader();
             //读取到xml
             Document doc=reader.
-                    read(new File("./pjmaven13/conf/web.xml"));
+                    read(new File("./pjmaven16/conf/web.xml"));
             //得到标签头
             Element element=doc.getRootElement();
             List<Element> f= element.elements("mime-mapping");

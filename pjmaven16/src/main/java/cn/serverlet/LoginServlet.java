@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public class LoginServlet extends HttpServlet {
-    public  void Servlet(HttpRequest request, HttpResponse response) throws IOException {
+    public  void service(HttpRequest request, HttpResponse response) throws IOException {
         System.out.println("登入");
         //获取对应的值
         String username=request.getParameter("username");
@@ -41,9 +41,9 @@ public class LoginServlet extends HttpServlet {
                 }
             }
             if (check){
-                response.setEntity(new File("./pjmaven15/webapps/myweb/login_success.html"));
+                response.setEntity(new File("./pjmaven16/webapps/myweb/login_success.html"));
             }else {
-                response.setEntity(new File("./pjmaven15/webapps/myweb/login_fail.html"));
+                response.setEntity(new File("./pjmaven16/webapps/myweb/login_fail.html"));
             }
 
         } catch (Exception e) {

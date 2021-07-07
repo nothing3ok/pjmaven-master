@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<servlets>
+    <servlet path="/myweb/reg" className="cn.serverlet.RegServlet"></servlet>
+    <servlet path="/myweb/login" className="cn.serverlet.LoginServlet"></servlet>
+</servlets>

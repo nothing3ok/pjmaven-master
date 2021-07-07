@@ -22,3 +22,12 @@ value 保存处理对应请求的 servlet 实例
 加载时进行初始化操作，
 
 4 对外提供一个根据请求过去对应servlet 实例的方法
+
+5 在clienthandler 处理请求的环节，根据请求路径去
+servercontext 中获取对应的servlet ，若获取到则调用 其service 方法处理
+没获取到说明这请求不是  请求业务，那么当静态资源做后续处理
+
+6 在config 目录下新建一个配置文件，servlets 。xml
+并将所有请求与对应的servlet 名字配置在这里
+
+7 在servercontext初始化中加载servlets.xml 并利用反射servlet 实例化出来

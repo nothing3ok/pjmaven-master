@@ -12,15 +12,24 @@ var g={
         canvas:'#canvas',
         levelblocks:16,
         leftsg:'#leftsg',
- sourcenum:'843215697172396485695748132254139876317682954968574213421857369789463521536921748'
+        sourcenum:'319824756657931824428576193873695241294718635165243987741389562582467319936152478'
+    //sourcenum:'843215697172396485695748132254139876317682954968574213421857369789463521536921748'
 }
 /*公共属性定义----End*/
 
 /*初始化表格数据----Begin*/
 function InitData()
 {
-    for (i=0;i<9;i++) {bl[i]=new Array(9);tn[i]=new Array(2);s[i]=new Array(9);numcount[i]=9;}
-    for(j=0;j<9;j++)for(k=0;k<9;k++){bl[j][k]=0;s[j][k]=g.sourcenum.substr(j*9+k,1);}
+    for (i=0;i<9;i++) {
+        bl[i]=new Array(9);
+        tn[i]=new Array(2
+        );
+        s[i]=new Array(9);numcount[i]=9;}
+    for(j=0;j<9;j++){
+        for(k=0;k<9;k++){
+            bl[j][k]=0;s[j][k]=g.sourcenum.substr(j*9+k,1);
+        }
+    }
 }
 /*初始化表格数据----End*/
 
@@ -242,7 +251,15 @@ $('#leftsg').refreshnumcount();
 function finit(l)
 {
 $('#timer').stopTime();$('#timer').html('Timer:<span>00:00:00<span/>').find('span').css({'font-weight': '100'});
-InitData();CreateSukudoArray();InitBlockData(l);CreateSukudoTable();$('.g').hover(function(){$(this).addClass('h');},function(){$(this).removeClass('h');});$('.c').hover(function(){$(this).addClass('h');},function(){$(this).removeClass('h');}).click(function(){$('td').removeClass('sel').unmousewheel();$(this).addClass('sel').mousewheel(function(objEvent, intDelta){wc(intDelta,$(this));});currentmouseint=$(this).num();});$('#lefts').html('LeftSquares:'+blockscount+'');$('#leftsg').refreshnumcount();
+InitData();
+CreateSukudoArray();
+InitBlockData(l);
+CreateSukudoTable();
+$('.g').hover(function(){$(this).addClass('h');
+    },function()
+{$(this).removeClass('h');});
+$('.c').hover
+(function(){$(this).addClass('h');},function(){$(this).removeClass('h');}).click(function(){$('td').removeClass('sel').unmousewheel();$(this).addClass('sel').mousewheel(function(objEvent, intDelta){wc(intDelta,$(this));});currentmouseint=$(this).num();});$('#lefts').html('LeftSquares:'+blockscount+'');$('#leftsg').refreshnumcount();
 if(l!=0)$('#timer').everyTime(1000,'timer',function(i){$(this).html('Timer:<span>'+f(Math.floor(i/3600))+':'+f(Math.floor(i/60))+':'+f(i%60)+'</span>').find('span').css({'font-weight': '100'});})
 }
 

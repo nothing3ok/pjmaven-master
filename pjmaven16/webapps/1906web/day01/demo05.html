@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /**
+         * 物产无返回值*/
+        function fn1(){
+            alert("fn1被执行了")
+        }
+
+        /**
+         * 调用方法
+         */
+        /**
+         * 有参无返回值
+         */
+        fn1();
+
+        function fn2(name,age){
+            alert(name+":"+age);
+        }
+        fn2("xiaoming",24);
+
+        /**
+         * 无参有返回值
+         */
+        function fn3(){
+            return "abc";
+        }
+        var x=fn3();
+        alert(x);
+        /**
+         * 有参有返回值
+         */
+        function fn4(x,y){
+            return x*y;
+        }
+        var z=fn4(3,2);
+        alert(z);
+
+        /**
+         * js  第二种  声明方法的格式
+         * @param name
+         * @param age
+         */
+        var fn5 =function (name,age){
+            alert(name+":"+age) ;
+        }
+        fn5("zhngsan",5);
+
+
+        var  fn6=new Function ("z","b","return z*b");
+        var gg= fn6(3,9);
+        alert(gg);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
